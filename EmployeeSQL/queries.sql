@@ -1,10 +1,3 @@
-Select * from departments
-Select * from employees
-Select * from dept_emp
-Select * from dept_manager
-Select * from salaries
-Select * from titles
-
 -- 1. List the following details of each employee: 
 -- employee number, last name, first name, sex, and salary.
 SELECT e.emp_no AS employee_number, e.last_name, e.first_name, e.sex, s.salary
@@ -43,15 +36,6 @@ WHERE first_name = 'Hercules' AND last_name LIKE 'B%'
 
 -- 6. List all employees in the Sales department, 
 -- including their employee number, last name, first name, and department name.
-SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
-FROM departments d
-LEFT JOIN dept_emp
-ON dept_emp.dept_no = d.dept_no
-AND d.dept_name = 'Sales'
-LEFT JOIN employees e
-ON dept_emp.emp_no = e.emp_no
-
--- WHY DOES THIS GIVE A SMALLER COUNT OF ROWS
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM departments d
 LEFT JOIN dept_emp
